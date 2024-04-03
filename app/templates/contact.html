@@ -1,0 +1,86 @@
+{% extends 'navigation.html'%}
+{% load static %}
+{% block body %}
+
+{% if error == "no" %}
+     <script>
+	   alert('Your Message has been Send Successfully');
+	   window.location = '/contact/';
+     </script>
+{% endif %}
+
+{% if error == "yes" %}
+     <script>
+	    alert('Something went wrong, Try Again');
+     </script>
+{% endif %}
+<br><br><br><br>
+<section class="contact" id="contact">
+<h1 class="heading mt-5">Contact us</h1>
+
+<div class="row">
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="full name" name="fullname" class="box">
+        <input type="email" placeholder="your email" name="email" class="box">
+        <input type="number" placeholder="your contact number" name="mobile" class="box">
+        <input type="text" placeholder="Subject" name="subject" class="box">
+        <textarea name="message" id="" cols="30" rows="8" class="box address" placeholder="Send Message..."></textarea>
+        <input type="submit" class="btn" value="send now">
+    </form>
+
+   
+
+</div>
+</section>
+<style>
+
+h1.heading.mt-5 {
+    text-align: center;
+    margin: 16px 122px;
+    
+}
+    .btn{
+        background: brown;
+    }
+    .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 80%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+}
+
+.box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+</style>
+{% endblock %}

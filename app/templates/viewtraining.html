@@ -1,0 +1,61 @@
+{% extends 'navigation.html'%}
+{% load static %}
+{% block body %}
+<style> 
+   .container {
+    margin-top: 50px; /* Add margin-top for better spacing */
+    }
+
+    h1{
+        text-align: center;
+        margin-right: 30px;
+    }
+    .training-card {
+    
+        margin-left: 300px;
+        width: 800px; /* Adjust width of each training card */
+        margin-bottom: 30px; /* Add margin-bottom for better separation between cards */
+        padding: 20px;
+        /* border: 1px solid #ccc; Add border for visual separation */
+        border-radius: 5px; /* Add border-radius for rounded corners */
+    }
+
+    .training-image {
+        width: 100%; /* Ensure image fills container */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 5px; /* Add border-radius for rounded corners */
+    }
+
+    .training-description {
+        margin-top: 10px; /* Add margin-top for spacing between image and description */
+        text-align: left;
+        font-size: 40px;
+    }
+        /* .flex-container{
+            display: flex;
+            justify-content: space-around;
+            width:"320";
+            height:"240";
+            flex-wrap:wrap; 
+            } */
+       
+</style>
+<div class="container mt-5">
+    <h1 class="text-success text-center">Trainings</h1>
+    <h2 class="text-center text-danger"></h2>
+    <br>
+    <div class= "flex-container">
+        
+            {% for training in trains %}
+            <div class="training-card">
+                <p class="training-description">{{ training.description }}</p>
+                <img class="training-image" src="{{ training.image.url }}" alt="Training Image">
+                
+            </div>
+            {% endfor %}
+        
+    </div>
+    <br/><br/>
+</div>
+
+{% endblock %}

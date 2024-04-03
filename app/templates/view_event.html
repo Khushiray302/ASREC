@@ -1,0 +1,107 @@
+{% extends 'navigation.html'%}
+{% load static %}
+{% block body %}
+
+<style>
+.btn {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        min-width: 130px;
+        padding: 15px 50px;
+        margin-top: 10px;
+        background: rgba(85, 30, 112, 0.11);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.1px);
+        -webkit-backdrop-filter: blur(3.1px);
+        border: 1px solid rgba(136, 68, 170, 0.73);
+        text-transform: uppercase;
+        font-weight: bold;
+        overflow: hidden;
+        z-index: 2;
+      }
+/* .open-link-btn {
+    
+    background-color: #6282ed; 
+    border: none;
+    color: white;
+    padding: 6px 21px;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+} */
+
+.open-link-btn:hover {
+    background-color: #449bc6; /* Darker green on hover */
+}
+    .container {
+    margin-top: 25px; /* Add margin-top for better spacing */
+    }
+
+    h1{
+        text-align: center;
+        margin-right: 30px;
+    }
+    .training-card {
+    
+        margin-left: auto;
+        margin-right: auto;
+        width: 55%; /* Adjust width of each training card */
+        margin-bottom: 20px; /* Add margin-bottom for better separation between cards */
+        padding: 20px;
+        /* border: 1px solid #ccc; Add border for visual separation */
+        border-radius: 5px; /* Add border-radius for rounded corners */
+    }
+
+    .training-image {
+        width: 100%; /* Ensure image fills container */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 5px; /* Add border-radius for rounded corners */
+    }
+
+    .training-description {
+        margin-top: 10px; /* Add margin-top for spacing between image and description */
+        text-align: left;
+        font-size: 40px;
+    }
+    @media (max-width: 768px) {
+    .training-card {
+        max-width: 90%; /* Adjust maximum width for smaller screens */
+    }
+}
+</style>
+<div class="container mt-5">
+    <h1 class="text-success text-center">Events</h1>
+    <h2 class="text-center text-danger"></h2>
+    <br>
+    <div class= "flex-container">
+        
+            {% for event in events %}
+            <div class="training-card">
+                
+                <img class="training-image" src="{{event.image.url }}" alt="Training Image">
+                <button class="btn" onclick="openLink('{{ event.link }}')">Apply</button>
+                <!-- <button class="training-description">{{ event.link }}</button> -->
+                
+            </div>
+            {% endfor %}
+        
+    
+    </div>
+    <br/><br/>
+</div>
+{% include 'event.html' %}
+<script>
+    function openLink(link) {
+        window.open(link, '_blank');
+    }
+</script>
+
+{% endblock %}

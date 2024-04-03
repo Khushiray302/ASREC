@@ -1,0 +1,96 @@
+{% extends 'navigation.html'%}
+{% load static %}
+{% block body %}
+
+<!-- <div class="container mt-5">
+  <h1 class="text-success text-center"></h1>
+            <h4 class="text-center text-danger">View Blogs</h4>
+			<br>
+			{% for  blog in blogs %}
+                <video>{{blog.video_file}}</video><br/>
+                <p>{{blog.description}}</p>
+
+            {% endfor %}
+			<thead>
+					<tr>
+						<th>S.No</th>
+
+                        <th>Description</th>
+                       
+                        <th>File_Type</th>
+                       
+                    </tr>
+				</thead>
+			 
+</div> -->
+
+<style>
+  .container {
+      margin-top: 50px; /* Add margin-top for better spacing */
+  }
+
+  h4 {
+    margin-left: -38px;
+      text-align: center;
+      margin-right: 30px;
+      font-size: 30px;
+  }
+  .blog-container {
+    border: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; /* Adjust width relative to the viewport width */
+    max-width: 800px; /* Set maximum width to prevent it from stretching too wide */
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Media query for responsiveness */
+@media (min-width: 768px) {
+    .blog-container {
+        width: 80%; /* Adjust width for larger screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog-container {
+        width: 912px; /* Adjust width for extra-large screens */
+    }
+}
+
+
+ 
+
+  .blog-video {
+      background: black;
+      width: 100%;
+      height: 75%; /* Maintain aspect ratio */
+      border-radius: 5px; /* Add border-radius for rounded corners */
+  }
+
+  .blog-description {
+    font-style: italic;
+      margin-top: 10px; /* Add margin-top for spacing between video and description */
+      text-align: left;
+      font-size: 28px;
+      
+  }
+</style>
+  <div class="container mt-5">
+      <h1 class="text-success text-center"></h1>
+      <h4 class="text-center text-danger">Blogs</h4>
+      <br>
+      {% for blog in blogs %}
+      <div class="blog-container">
+        <p class="blog-description">{{blog.description}}</p>
+        <video width="320" height="240"  class="blog-video" controls>
+          <source src="{{ blog.video_file.url }}" type="video/mp4">
+          
+        </video>
+      
+        </div>
+        {% endfor %}
+</div>
+
+{% endblock %}

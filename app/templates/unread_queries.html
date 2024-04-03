@@ -1,0 +1,75 @@
+{% load static %}
+
+<div id="page-container" class="sidebar-o sidebar-inverse side-scroll page-header-fixed main-content-narrow">
+
+       {% include "admin_nav.html" %}
+
+       <!-- Main Container -->
+       <main id="main-container">
+           <!-- Page Content -->
+           <div class="content">
+               <h2 class="content-heading text-danger">Unread Queries</h2>
+               <!-- Dynamic Table Full Pagination -->
+               <div class="block">
+
+                   <div class="block-content block-content-full">
+                    
+                    <style>
+                    .table-bordered {
+                        border-collapse: collapse;
+                        width: 70%;
+                    }
+            
+                    .table-bordered th,
+                    .table-bordered td {
+                        border: 1px solid #dddddd;
+                        padding: 8px;
+                        text-align: left;
+                    }
+            
+                    .table-bordered th {
+                        background-color: #2b456e;
+                        font-weight: bold;
+                    }
+            
+                  
+            
+                    .table-bordered caption {
+                        font-size: 20px;
+                        color: rgb(233, 91, 91);
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                </style>  
+                       <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
+                           <thead class="text-white" style="background-color : #ca5430;  font-size: 20px;"></thead>
+                               <tr>
+                                   <th class="text-center">S.No</th>
+                                   <th class="d-none d-sm-table-cell">Name</th>
+                                   <th class="d-none d-sm-table-cell">Email ID</th>
+                                   <th class="d-none d-sm-table-cell">Contact Number</th>
+                                   <th class="d-none d-sm-table-cell" style="width: 15%;">Action</th>
+                               </tr>
+                           </thead>
+                           {% for i in contact %}
+                           <tbody>
+                               <tr>
+                                   <td class="text-center">{{forloop.counter}}</td>
+                                   <td class="font-w600">{{i.fullname}}</td>
+                                   <td class="font-w600">{{i.email}}</td>
+                                   <td class="font-w600">{{i.mobile}}</td>
+                                   <td class="font-w600"><a href="{% url 'view_queries' i.id %}" class="text-primary">View Details</a></td>
+                               </tr>
+                            {% endfor %}
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+               <!-- END Dynamic Table Full Pagination -->
+
+               <!-- END Dynamic Table Simple -->
+           </div>
+           <!-- END Page Content -->
+       </main>
+       <!-- END Main Container -->
+</div>

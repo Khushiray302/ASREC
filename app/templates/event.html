@@ -1,0 +1,169 @@
+
+
+{% load static %}
+
+
+
+<html lang="en" class="hydrated"><head>
+    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   
+        <script src="js/script.js" defer=""></script>
+        <title>{% block title %}Asteroid Search Training{% endblock %}</title>
+  <style>
+      body {
+      font-family: 'Familjen Grotesk', sans-serif;
+      background-image: url("/static/images/asteroid.webp");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      }
+
+      footer {
+        z-index: 0;
+        width: 100%;
+        background-image: url(/static/images/footer.webp);
+        color: var(--light);
+        display: flex;
+        justify-content: center;
+        padding: 3rem 8%;
+        font: -0.25rem helvetica, sans-serif;
+
+      }
+
+
+      .info img {
+        height: auto;
+        max-width: 100%;
+      }
+      .info {
+        position: relative;
+        padding: 5% 10%;
+        left: 15%;
+        width: 70%;
+      }
+
+      footer {
+        z-index: 0;
+        width: 100%;
+        background-image: url(/static/images/footer.jpg);
+        color: var(--light);
+        display: flex;
+        justify-content: center;
+        padding: 3rem 8%;
+        font: -0.25rem helvetica, sans-serif;
+
+      }
+      #emblem-span img {
+        width: 20%;
+        height: auto;
+        margin-left: 5%;
+      }
+      .btn {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        min-width: 130px;
+        padding: 15px 50px;
+        margin-top: 10px;
+        background: rgba(85, 30, 112, 0.11);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.1px);
+        -webkit-backdrop-filter: blur(3.1px);
+        border: 1px solid rgba(136, 68, 170, 0.73);
+        text-transform: uppercase;
+        font-weight: bold;
+        overflow: hidden;
+        z-index: 2;
+      }
+      .main-header {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: uppercase;
+        height: 100px;
+        padding: 0 30px;
+        background: #1e1e45;
+      }
+  </style>
+
+  </head>
+  <body>
+    
+ 
+   
+    <div class="section-animate bg-asteroid">
+    
+        <div class="info">
+            <img src="{% static 'Images/Asteroid-01.jpg' %}" alt="Asteroid Search Training "/>
+          
+          <button class="btn"><a href="https://forms.gle/P79GUt4R2LSYK7PW9">Apply</a></button>
+        </div>
+    
+        <div class="info">
+          <img src="{% static 'Images/Asteroid Search Training Letter.jpg' %}" alt="Asteroid Search Training"/>
+        </div>  
+          
+    </div>
+  
+
+    <footer>
+      <aside>
+        <span id="emblem-span">
+          <img src=" {% static 'Images/biratnagarmun.jpeg' %} "alt="nepal-gov-emblem">
+          <h2>Astronomy &amp; Space Science Study Research Commitee (ASReC), Biratnagar Metropolitan</h2>
+          <h2>© 2023</h2>
+        </span>
+        
+      </aside>
+      <aside>
+        <ul class="category">
+          <li>
+            <h3>Socials</h3>
+          </li>
+          <li><a href="https://www.facebook.com/profile.php?id=61554152726787">Facebook</a></li>
+          <li><a href="">Instagram</a></li>
+          <li><a href="">LinkedIn</a></li>
+          <li><a href="">Pinterest</a></li>
+        </ul>
+        <ul class="category">
+          <li>
+            <h3>About_Us</h3>
+          </li>
+          <li><a href="{% url 'teams' %}">Teams</a></li>
+          <li><a href="#">Values</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'displayBlog' %}">Blog</a></li>
+        </ul>
+        <ul class="category">
+          <li>
+            <h3>Events</h3>
+          </li>
+          <li><a href=" ">Outreach</a></li>
+          <li><a href="{% url 'displayTrainings' %} ">Training</a></li>
+          <li><a href=" ">Gallery</a></li>
+        </ul>
+        
+      </aside>
+    </footer>
+  
+  
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+  
+      
+
+</body></html>
+

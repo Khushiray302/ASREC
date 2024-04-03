@@ -1,0 +1,82 @@
+{% load static %}
+<div id="page-container" class="sidebar-o sidebar-inverse side-scroll page-header-fixed main-content-narrow">
+{% include "admin_nav.html" %}
+
+<!-- Main Container -->
+<main id="main-container">
+    <!-- Page Content -->
+    <div class="content">
+        <!-- <h2 class="content-heading text-danger">View Queries Details</h2> -->
+        <!-- Dynamic Table Full Pagination -->
+        <div class="block">
+            <div class="block-content block-content-full">
+                <style>
+                    .table-bordered {
+                        border-collapse: collapse;
+                        width: 70%;
+                    }
+            
+                    .table-bordered th,
+                    .table-bordered td {
+                        border: 1px solid #dddddd;
+                        padding: 8px;
+                        text-align: left;
+                    }
+            
+                    .table-bordered th {
+                        background-color: #2b456e;
+                        font-weight: bold;
+                    }
+            
+                  
+            
+                    .table-bordered caption {
+                        font-size: 20px;
+                        color: rgb(233, 91, 91);
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                </style>
+                <table class="table table-bordered">
+                    <tr >
+                        <td  colspan="4" style="font-size : 20px; color : rgb(233, 91, 91); text-align:center; font-weight: bold;">View Queries Details</td>
+                    </tr>
+
+                    <tr>
+                        <th >Name </th>
+                        <td>{{contact.fullname}}</td> 
+
+                        <th>Contact No.</th>
+                        <td>{{contact.mobile}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Email ID</th>
+                        <td>{{contact.email}}</td>
+
+                        <th>Subject</th>
+                        <td>{{contact.subject}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Enquiry Message</th>
+                        <td colspan="3">{{contact.message}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Enquiry Date</th>
+                        <td colspan="3">{{contact.msgdate}}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <!-- END Dynamic Table Full Pagination -->
+
+        <!-- END Dynamic Table Simple -->
+    </div>
+    <!-- END Page Content -->
+</main>
+<!-- END Main Container -->
+</div>
+<!-- END Page Container -->

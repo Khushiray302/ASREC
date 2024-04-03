@@ -1,0 +1,129 @@
+{% load static %}
+
+<html lang="en" class="hydrated"><head>
+    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/event.css' %}">
+   
+        <script src="js/script.js" defer=""></script>
+        <title>{% block title %}Asteroid Search Training{% endblock %}</title>
+
+<style>
+  footer {
+    z-index: 0;
+    width: 100%;
+    background-image: url(/static/images/footer.jpg);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    padding: 3rem 8%;
+    font: -0.25rem helvetica, sans-serif;
+
+}
+.main-header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    height: 100px;
+    padding: 0 30px;
+    background: #1e1e45;
+}
+.section-animate {
+    animation: fadeIn 2s ease-in-out;
+}
+body {
+    font-family: 'Familjen Grotesk', sans-serif;
+    background-image: url("/static/images/planet.webp");
+    
+    background-repeat: no-repeat;
+    color: #fff;
+}
+</style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="{% static 'images/biratnagarmun.jpeg' %}" alt="nepal-gov-emblem">
+        </a>
+        <h1>Astronomy &amp; Space Science Study Research Commitee (ASREC), Biratnagar Metropolitan  </h1>
+      </div>
+      <nav class="desktop-main-menu">
+        <ul>
+          <li><a href="/ ">Home</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'displayEvent' %}">Events</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="section-animate bg-coming-soon">
+      
+      <div class="banner-info">
+        <div class="intro">
+          <h1> Welcome to the Official Site of Astronomy &amp; Space Science Study Research Commitee (ASREC), Biratnagar Metropolitan</h1>
+          
+           <button class="btn"><a href="about/">Learn More</a></button>
+         
+        </div>
+      </div>  
+        
+    </div>
+    
+    <footer>
+      <aside>
+        <span id="emblem-span">
+          <img src= 'static/Images/biratnagarmun.jpeg' alt="nepal-gov-emblem">
+          <h2>Astronomy &amp; Space Science Study Research Commitee (ASReC), Biratnagar Metropolitan</h2>
+          <h2>© 2023</h2>
+        </span>
+        
+      </aside>
+      <aside>
+        <ul class="category">
+          <li>
+            <h3>Socials</h3>
+          </li>
+          <li><a href="https://www.facebook.com/profile.php?id=61554152726787">Facebook</a></li>
+          <li><a href="">Instagram</a></li>
+          <li><a href="">LinkedIn</a></li>
+          <li><a href="">Pinterest</a></li>
+        </ul>
+        <ul class="category">
+          <li>
+            <h3>About_Us</h3>
+          </li>
+          <li><a href="{% url 'displayTeam' %}">Teams</a></li>
+          <li><a href="#">Values</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'displayBlog' %}">Blog</a></li>
+        </ul>
+        <ul class="category">
+          <li>
+            <h3>Events</h3>
+          </li>
+          <li><a href="index.html">Outreach</a></li>
+          <li><a href="{% url 'displayTrainings' %}">Training</a></li>
+          <li><a href="{% url 'displayEvent' %}">Gallery</a></li>
+        </ul>
+        
+      </aside>
+    </footer>
+  
+  
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  
+
+</body></html>
+
